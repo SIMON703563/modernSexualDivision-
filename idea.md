@@ -1,6 +1,3 @@
-Yes. Here's a first-pass GitHub Mermaid flow using your framework, but separating **observations**, **proposed pathways**, and **theological interpretation** so the diagram doesn't accidentally present contested causal claims as established facts.
-
-```
 flowchart TD
 
     %% =====================================================
@@ -180,6 +177,3 @@ flowchart TD
     Y["2000"] --> Y1["2005"] --> Y2["2010"] --> Y3["2015"] --> Y4["2020"] --> Y5["2026"]
 
     Y -. cultural change .-> A
-```
-
-This gives you the **architecture** for the larger diagram. Most importantly, it leaves room for your theological argument without making the diagram claim that a particular sexual orientation or gender identity is _caused_ by trauma, parenting, or social pressure.
