@@ -2,7 +2,6 @@
 
 
 
-```
 flowchart TD
     A["2000 to 2026: Changing Sexual and Gender Culture"] --> B["Internet Expansion"]
     A --> C["Sexualized Media Culture"]
@@ -126,5 +125,4 @@ flowchart TD
     Y3 --> Y4["2020"]
     Y4 --> Y5["2026"]
     Y -.-> A
-```
 ```
