@@ -1,179 +1,95 @@
+Yes — the Mermaid itself is close, but there are a couple of things I'd change for **GitHub's Mermaid renderer**.
+
+The safest approach is to keep the syntax conservative: no `<br/>` inside node labels, no special punctuation where it isn't necessary, and use simple quoted labels. Also, your time axis isn't really connected to the main flow, so I've simplified that.
+
+Try this exact version in your `.md` file:
+
+```
+
+```
+
 flowchart TD
 
-    %% =====================================================
-    %% 2000-2026 CULTURAL / RELATIONAL MODEL
-    %% =====================================================
+A\["2000 to 2026: Changing Sexual and Gender Culture"\]
 
-    A["2000–2026<br/>Changing Sexual & Gender Culture"]
+A --\> B\["Internet Expansion"\] A --\> C\["Sexualized Media Culture"\] A --\> D\["Changing Gender Expectations"\] A --\> E\["Changing Relationship Patterns"\]
 
-    A --> B["Internet Expansion"]
-    A --> C["Sexualized Media Culture"]
-    A --> D["Changing Gender Expectations"]
-    A --> E["Changing Relationship Patterns"]
+B --\> B1\["Early Internet"\] B1 --\> B2\["Online Sexual Content"\] B2 --\> B3\["Greater Sexual Availability"\] B3 --\> B4\["Private and Solo Sexual Behaviour"\]
 
-    %% -----------------------------------------------------
-    %% INTERNET / SEXUAL CULTURE
-    %% -----------------------------------------------------
+C --\> C1\["Normalization of Casual Sex"\] C --\> C2\["Sexualized Advertising and Media"\] C --\> C3\["Online Dating and Hookup Culture"\] C --\> C4\["Private and Public Sexuality"\]
 
-    B --> B1["Early Internet"]
-    B1 --> B2["Online Sexual Content"]
-    B2 --> B3["Greater Sexual Availability"]
-    B3 --> B4["Private / Solo Sexual Behaviour"]
+D --\> M\["Male Experience"\]
 
-    C --> C1["Normalization of Casual Sex"]
-    C --> C2["Sexualized Advertising & Media"]
-    C --> C3["Online Dating / Hookup Culture"]
-    C --> C4["Reduced Separation Between Private & Public Sexuality"]
+M --\> M1\["Traditional Masculine Expectations"\] M --\> M2\["Men Viewed Through Risk and Predator Lens"\] M --\> M3\["Pressure to Prove Masculinity"\] M --\> M4\["Fear of Rejection"\] M --\> M5\["Loneliness"\] M --\> M6\["Difficulty Forming Intimate Relationships"\]
 
-    %% -----------------------------------------------------
-    %% MALE EXPERIENCE
-    %% -----------------------------------------------------
+B4 --\> M5 C3 --\> M5
 
-    D --> M["Male Experience"]
+M5 --\> M7\["Online and Solo Coping"\] M6 --\> M7 M7 --\> M8\["Emotional Withdrawal"\]
 
-    M --> M1["Traditional Masculine Expectations"]
-    M --> M2["Men Viewed Through Risk / Predator Lens"]
-    M --> M3["Pressure to Prove Masculinity"]
-    M --> M4["Fear of Rejection"]
-    M --> M5["Loneliness"]
-    M --> M6["Difficulty Forming Intimate Relationships"]
+D --\> F\["Female Experience"\]
 
-    B4 --> M5
-    C3 --> M5
+F --\> F1\["Greater Sexual Agency"\] F --\> F2\["Changing Relationship Expectations"\] F --\> F3\["Greater Online Sexual Exposure"\] F --\> F4\["Pressure From Sexualized Culture"\]
 
-    M5 --> M7["Online / Solo Coping"]
-    M6 --> M7
-    M7 --> M8["Emotional Withdrawal"]
+C --\> F3 C1 --\> F4
 
-    %% -----------------------------------------------------
-    %% FEMALE EXPERIENCE
-    %% -----------------------------------------------------
+D --\> S\["Sexual Orientation and Identity"\]
 
-    D --> F["Female Experience"]
+S --\> S1\["Heterosexual Male"\] S --\> S2\["Heterosexual Female"\] S --\> S3\["Same Sex Attracted Male"\] S --\> S4\["Same Sex Attracted Female"\] S --\> S5\["Questioning or Gender Identity"\]
 
-    F --> F1["Greater Sexual Agency"]
-    F --> F2["Changing Expectations Around Relationships"]
-    F --> F3["Greater Online Sexual Exposure"]
-    F --> F4["Pressure From Sexualized Culture"]
+M5 --\> P\["Psychological and Relational Pressures"\] F4 --\> P E --\> P
 
-    C --> F3
-    C1 --> F4
+P --\> P1\["Rejection"\] P --\> P2\["Bullying"\] P --\> P3\["Shame"\] P --\> P4\["Fear"\] P --\> P5\["Heartbreak"\] P --\> P6\["Desire for Safety"\] P --\> P7\["Desire for Belonging"\] P --\> P8\["Need for Acceptance"\]
 
-    %% -----------------------------------------------------
-    %% SAME-SEX ATTRACTION / IDENTITY
-    %% -----------------------------------------------------
+P1 --\> R\["Possible Coping Responses"\] P2 --\> R P3 --\> R P4 --\> R P5 --\> R
 
-    D --> S["Sexual Orientation / Identity"]
+R --\> R1\["Withdrawal"\] R --\> R2\["Serial Relationships"\] R --\> R3\["Sexual Behaviour"\] R --\> R4\["Celibacy and Virginity"\] R --\> R5\["Online Communities"\] R --\> R6\["Identity Exploration"\] R --\> R7\["Seeking Emotional Safety"\]
 
-    S --> S1["Heterosexual Male"]
-    S --> S2["Heterosexual Female"]
-    S --> S3["Same-Sex Attracted Male"]
-    S --> S4["Same-Sex Attracted Female"]
-    S --> S5["Questioning / Gender Identity"]
+A --\> H\["Child and Family Environment"\]
 
-    %% -----------------------------------------------------
-    %% SOCIAL / EMOTIONAL PATHWAYS
-    %% -----------------------------------------------------
+H --\> H1\["Heterosexual Parents"\] H --\> H2\["Same Sex Parents"\] H --\> H3\["Father Relationship"\] H --\> H4\["Mother Relationship"\] H --\> H5\["Parental Conflict"\] H --\> H6\["Parental Absence"\] H --\> H7\["Family Stability"\] H --\> H8\["Childhood Social Environment"\]
 
-    M5 --> P["Psychological & Relational Pressures"]
-    F4 --> P
-    E --> P
+H8 --\> H9\["Bullying"\] H8 --\> H10\["Peer Pressure"\] H8 --\> H11\["Belonging and Rejection"\]
 
-    P --> P1["Rejection"]
-    P --> P2["Bullying"]
-    P --> P3["Shame"]
-    P --> P4["Fear"]
-    P --> P5["Heartbreak"]
-    P --> P6["Desire for Safety"]
-    P --> P7["Desire for Belonging"]
-    P --> P8["Need for Acceptance"]
+A --\> T\["Christian Theological Framework"\]
 
-    P1 --> R["Possible Coping Responses"]
-    P2 --> R
-    P3 --> R
-    P4 --> R
-    P5 --> R
+T --\> T1\["Creation"\] T1 --\> T2\["Male and Female"\] T2 --\> T3\["Marriage as Covenant"\]
 
-    R --> R1["Withdrawal"]
-    R --> R2["Serial Relationships"]
-    R --> R3["Sexual Behaviour"]
-    R --> R4["Celibacy / Virginity"]
-    R --> R5["Online Communities"]
-    R --> R6["Identity Exploration"]
-    R --> R7["Seeking Emotional Safety"]
+T --\> T4\["The Fall"\] T4 --\> T5\["Human Brokenness"\] T5 --\> T6\["Disordered Desires and Relationships"\]
 
-    %% -----------------------------------------------------
-    %% FAMILY / CHILD DEVELOPMENT
-    %% -----------------------------------------------------
+T --\> T7\["Biblical Sexual Ethics"\] T7 --\> T8\["Sexuality Within God's Design"\]
 
-    A --> H["Child & Family Environment"]
+T --\> T9\["Pastoral Response"\] T9 --\> T10\["Truth"\] T9 --\> T11\["Compassion"\] T9 --\> T12\["Repentance"\] T9 --\> T13\["Healing"\] T9 --\> T14\["Redemption in Christ"\]
 
-    H --> H1["Heterosexual Parents"]
-    H --> H2["Same-Sex Parents"]
-    H --> H3["Father Relationship"]
-    H --> H4["Mother Relationship"]
-    H --> H5["Parental Conflict"]
-    H --> H6["Parental Absence"]
-    H --> H7["Family Stability"]
-    H --> H8["Childhood Social Environment"]
+R7 --\> X\["Proposed Interpretation"\] X --\> X1\["Identity or Community May Become a Perceived Source of Safety"\] X --\> X2\["Cultural Pressure May Influence Self Understanding"\] X --\> X3\["Relational Wounds May Influence Later Relationship Behaviour"\]
 
-    H8 --> H9["Bullying"]
-    H8 --> H10["Peer Pressure"]
-    H8 --> H11["Belonging / Rejection"]
+X --\> O\["Possible Long Term Outcomes"\]
 
-    %% -----------------------------------------------------
-    %% THEOLOGICAL FRAMEWORK
-    %% -----------------------------------------------------
+O --\> O1\["Healthy Attachment"\] O --\> O2\["Marriage or Partnership"\] O --\> O3\["Celibacy"\] O --\> O4\["Repeated Relationship Patterns"\] O --\> O5\["Isolation"\] O --\> O6\["Identity Stability"\] O --\> O7\["Continued Identity Questioning"\] O --\> O8\["Healing and Reconciliation"\]
 
-    A --> T["Christian Theological Framework"]
+Y\["2000"\] --\> Y1\["2005"\] Y1 --\> Y2\["2010"\] Y2 --\> Y3\["2015"\] Y3 --\> Y4\["2020"\] Y4 --\> Y5\["2026"\]
 
-    T --> T1["Creation"]
-    T1 --> T2["Male & Female"]
-    T2 --> T3["Marriage as Covenant"]
+Y -.-\> A
 
-    T --> T4["Fall"]
-    T4 --> T5["Human Brokenness"]
-    T5 --> T6["Disordered Desires / Relationships"]
+```
 
-    T --> T7["Biblical Sexual Ethics"]
-    T7 --> T8["Sexuality Within God's Design"]
+```
 
-    T --> T9["Pastoral Response"]
-    T9 --> T10["Truth"]
-    T9 --> T11["Compassion"]
-    T9 --> T12["Repentance"]
-    T9 --> T13["Healing"]
-    T9 --> T14["Redemption in Christ"]
+### One important thing
 
-    %% -----------------------------------------------------
-    %% PROPOSED INTERPRETATION
-    %% -----------------------------------------------------
+The **Markdown fencing matters**. In GitHub, it needs to be:
 
-    R7 --> X["Proposed Interpretation<br/>(Hypothesis, not established causation)"]
+```
 
-    X --> X1["Identity / Community May Become<br/>a Perceived Source of Safety"]
-    X --> X2["Cultural Pressure May Influence<br/>How People Understand Themselves"]
-    X --> X3["Relational Wounds May Influence<br/>Later Relationship Behaviour"]
+```
 
-    %% -----------------------------------------------------
-    %% OUTCOMES
-    %% -----------------------------------------------------
+flowchart TD A\["Start"\] --\> B\["End"\]
 
-    X --> O["Possible Long-Term Outcomes"]
+```
 
-    O --> O1["Healthy Attachment"]
-    O --> O2["Marriage / Partnership"]
-    O --> O3["Celibacy"]
-    O --> O4["Repeated Relationship Patterns"]
-    O --> O5["Isolation"]
-    O --> O6["Identity Stability"]
-    O --> O7["Continued Identity Questioning"]
-    O --> O8["Healing / Reconciliation"]
+```
 
-    %% -----------------------------------------------------
-    %% TIME AXIS
-    %% -----------------------------------------------------
+—not just the Mermaid code by itself.
 
-    Y["2000"] --> Y1["2005"] --> Y2["2010"] --> Y3["2015"] --> Y4["2020"] --> Y5["2026"]
+Also, I've deliberately removed the comments (`%% =====`) for this test. They are valid Mermaid, but eliminating them makes troubleshooting much easier.
 
-    Y -. cultural change .-> A
+If this renders, **then we can build the much bigger version** with your 2000 → 2005 → 2010 → 2015 → 2020 → 2026 progression and put the male, female, heterosexual, homosexual, gender, childhood, family, internet, and theological branches into separate visual sections.
