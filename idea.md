@@ -4,7 +4,6 @@ The safest approach is to keep the syntax conservative: no `<br/>` inside node l
 
 Try this exact version in your `.md` file:
 
-```
 
 ```
 
